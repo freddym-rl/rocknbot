@@ -33,4 +33,6 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
+          file: LiLisa_Server/build/dockerfile_prod
+          context: LiLisa_Server
           tags: radiantone/rocknbot-server-internal:latest
