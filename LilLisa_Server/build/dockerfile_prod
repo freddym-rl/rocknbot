@@ -28,7 +28,7 @@ ENV PYTHONUNBUFFERED=1
 ENTRYPOINT ["conda", "run", "--no-capture-output", "-n", "LilLisa_Server", "uvicorn", "src.main:app", "--host=0.0.0.0"]
 
 FROM chainguard/wolfi-base:latest
-RUN apk add git libstdc++
+RUN apk update && add git libstdc++
 COPY --from=builder /opt/conda/envs/LilLisa_Server /usr/local/env
 COPY --from=builder /app /app
 ENV PATH="/usr/local/env/bin:$PATH"
